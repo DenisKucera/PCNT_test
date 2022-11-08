@@ -130,10 +130,10 @@ static void pcnt_example_init(void)
         .unit = PCNT_TEST_UNIT,
         // What to do on the positive / negative edge of pulse input?
         .pos_mode = PCNT_COUNT_INC,   // Count up on the positive edge
-        .neg_mode = PCNT_COUNT_DIS,   // Keep the counter value on the negative edge
+        //.neg_mode = PCNT_COUNT_DIS,   // Keep the counter value on the negative edge
         // What to do when control input is low or high?
-        .lctrl_mode = PCNT_MODE_REVERSE, // Reverse counting direction if low
-        .hctrl_mode = PCNT_MODE_KEEP,    // Keep the primary counter mode if high
+        //.lctrl_mode = PCNT_MODE_REVERSE, // Reverse counting direction if low
+        //.hctrl_mode = PCNT_MODE_KEEP,    // Keep the primary counter mode if high
         // Set the maximum and minimum limit values to watch
         .counter_h_lim = PCNT_H_LIM_VAL,
         .counter_l_lim = PCNT_L_LIM_VAL,
@@ -142,8 +142,8 @@ static void pcnt_example_init(void)
     pcnt_unit_config(&pcnt_config);
 
     /* Configure and enable the input filter */
-    pcnt_set_filter_value(PCNT_TEST_UNIT, 100);
-    pcnt_filter_enable(PCNT_TEST_UNIT);
+    //pcnt_set_filter_value(PCNT_TEST_UNIT, 100);
+    //pcnt_filter_enable(PCNT_TEST_UNIT);
 
     /* Set threshold 0 and 1 values and enable events to watch */
     pcnt_set_event_value(PCNT_TEST_UNIT, PCNT_EVT_THRES_1, PCNT_THRESH1_VAL);
