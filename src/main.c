@@ -125,7 +125,7 @@ static void pcnt_example_init(void)
     pcnt_config_t pcnt_config = {
         // Set PCNT input signal and control GPIOs
         .pulse_gpio_num = PCNT_INPUT_SIG_IO,
-        .ctrl_gpio_num = PCNT_INPUT_CTRL_IO,
+        //.ctrl_gpio_num = PCNT_INPUT_CTRL_IO,
         .channel = PCNT_CHANNEL_0,
         .unit = PCNT_TEST_UNIT,
         // What to do on the positive / negative edge of pulse input?
@@ -167,7 +167,7 @@ static void pcnt_example_init(void)
     pcnt_counter_resume(PCNT_TEST_UNIT);
 }
 
-void app_main()
+void pcnt()
 {
     /* Initialize LEDC to generate sample pulse signal */
     ledc_init();
